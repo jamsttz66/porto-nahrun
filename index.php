@@ -1,0 +1,509 @@
+<?php
+require_once __DIR__ . '/content.php';
+$content = portfolio_load();
+$name = $content['name'];
+?>
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="Portofolio Muhammad Nahrun Ukasya — fotografi, edit foto, website, aplikasi, dan AI."
+    />
+    <link rel="icon" href="data:," />
+    <title><?= portfolio_e(implode(' ', $name)) ?> — Portofolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Poppins:wght@400;500;600;700;800&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Lewati ke konten utama</a>
+    <div class="progress" aria-hidden="true"></div>
+
+    <div class="nav-wrap">
+      <nav aria-label="Navigasi utama">
+        <div class="nav-state"><span>MODE KREATIF / 2026</span></div>
+        <div class="nav-links">
+          <a href="#profil">Tentang saya</a>
+          <a href="tools.php">Tools</a>
+          <a href="#keahlian">Skill</a>
+          <a href="#pengalaman">Perjalanan</a>
+          <a href="#sertifikat">Sertifikat</a>
+          <a class="nav-cta" href="#kontak">Ngobrol</a>
+        </div>
+      </nav>
+    </div>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="hero-kicker">
+            <p class="mono-label">Foto × edit × digital</p>
+            <span class="availability"
+              ><i aria-hidden="true"></i> Siap diajak kerja bareng</span
+            >
+          </div>
+          <h1 id="hero-title">
+            <span><?= portfolio_e($name['first']) ?></span><span><?= portfolio_e($name['middle']) ?></span
+            ><span><?= portfolio_e($name['last']) ?><i aria-hidden="true">.</i></span>
+          </h1>
+          <p class="hero-lead"><?= portfolio_e($content['tagline']) ?></p>
+          <div class="hero-actions">
+            <a class="button primary" href="#keahlian"
+              >Lihat skill saya
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M5 12h14m-6-6 6 6-6 6" />
+              </svg>
+            </a>
+            <a class="button secondary" href="tools.php">Nahrun Tools</a>
+            <a class="button secondary" href="#pengalaman"
+              >Lihat perjalanan saya
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 5v14m0 0 5-5m-5 5-5-5" />
+              </svg>
+            </a>
+          </div>
+          <dl class="hero-details" aria-label="Ringkasan fokus kerja">
+            <div>
+              <dt>01</dt>
+              <dd>Snap</dd>
+            </div>
+            <div>
+              <dt>02</dt>
+              <dd>Edit</dd>
+            </div>
+            <div>
+              <dt>03</dt>
+              <dd>Build</dd>
+            </div>
+          </dl>
+        </div>
+
+        <aside
+          class="profile-module"
+          aria-label="Kartu profil Muhammad Nahrun Ukasya"
+        >
+          <span class="profile-index" aria-hidden="true">01</span>
+          <div class="profile-bar">
+            <span>Bikin yang berkesan</span><span>Siap</span>
+          </div>
+          <div class="portrait-wrap">
+            <img
+              src="images/foto-profil.jpg"
+              alt="Potret Muhammad Nahrun Ukasya mengenakan blazer gelap dengan latar merah"
+              width="1060"
+              height="1484"
+            />
+            <span class="focus-corner focus-corner-a" aria-hidden="true"></span>
+            <span class="focus-corner focus-corner-b" aria-hidden="true"></span>
+          </div>
+          <div class="profile-tags" aria-label="Bidang utama">
+            <span>Visual</span><span>Web</span><span>AI</span>
+          </div>
+          <dl class="profile-meta">
+            <div>
+              <dt>Domisili</dt>
+              <dd><?= portfolio_e($content['location']) ?></dd>
+            </div>
+            <div>
+              <dt>Fokus</dt>
+              <dd><?= portfolio_e($content['focus']) ?></dd>
+            </div>
+            <div>
+              <dt>Status</dt>
+              <dd><?= portfolio_e($content['status']) ?></dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
+
+      <div class="signal-strip" aria-label="Bidang keahlian ringkas">
+        <div class="signal-inner">
+          <span class="signal-key">Racikan skill</span>
+          <div class="signal-list">
+            <span>Fotografi</span><span>Edit Foto</span><span>Website</span
+            ><span>Aplikasi</span><span>AI</span><span>Vibe Coding</span>
+          </div>
+        </div>
+      </div>
+
+      <section
+        id="profil"
+        class="shell section-block"
+        aria-labelledby="profil-title"
+      >
+        <div class="section-head">
+          <p class="mono-label">/01 Tentang saya</p>
+          <h2 id="profil-title">Visual yang rapi, cara kerja yang luwes.</h2>
+        </div>
+        <div class="section-copy">
+          <p class="statement"><?= portfolio_e($content['about_statement']) ?></p>
+          <div class="about-copy">
+            <p><?= portfolio_e($content['about_one']) ?></p>
+            <p><?= portfolio_e($content['about_two']) ?></p>
+            <div class="facts" aria-label="Ringkasan profil">
+<?php foreach ($content['facts'] as $fact): ?>
+              <div class="fact"><strong><?= portfolio_e($fact['value']) ?></strong><span><?= portfolio_e($fact['label']) ?></span></div>
+<?php endforeach; ?>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="keahlian"
+        class="capabilities"
+        aria-labelledby="keahlian-title"
+      >
+        <div class="shell section-block">
+          <div class="section-head">
+            <p class="mono-label">/02 Skill saya</p>
+            <h2 id="keahlian-title">Hal yang bisa saya kerjakan.</h2>
+          </div>
+          <div class="capability-list">
+<?php foreach ($content['skills'] as $index => $skill): ?>
+            <article class="capability">
+              <span class="capability-index">SKL-<?= sprintf('%02d', $index + 1) ?></span>
+              <h3><?= portfolio_e($skill['title']) ?></h3>
+              <p><?= portfolio_e($skill['description']) ?></p>
+              <svg aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="24" height="24" /><path d="M10 16h12M16 10v12" /></svg>
+            </article>
+<?php endforeach; ?>
+<?php if (false): ?>
+            <article class="capability">
+              <span class="capability-index">SKL-02</span>
+              <h3>Edit Foto</h3>
+              <p>
+                Merapikan warna, cahaya, dan detail foto sampai hasilnya siap
+                dipakai.
+              </p>
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M4 8h24M9 4v8M4 24h24M23 20v8M4 16h24M17 12v8" />
+              </svg>
+            </article>
+            <article class="capability">
+              <span class="capability-index">SKL-03</span>
+              <h3>Website &amp; Aplikasi</h3>
+              <p>
+                Bikin website dan aplikasi lewat vibe coding, dari ide awal
+                sampai bisa dicoba.
+              </p>
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="3" y="4" width="26" height="21" />
+                <path d="M3 10h26M10 29h12M16 25v4" />
+              </svg>
+            </article>
+            <article class="capability">
+              <span class="capability-index">SKL-04</span>
+              <h3>AI</h3>
+              <p>
+                Memakai AI untuk mencari ide, mempercepat kerja kreatif, dan
+                membantu proses teknis.
+              </p>
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="8" y="8" width="16" height="16" />
+                <path
+                  d="M12 1v7m8-7v7m-8 16v7m8-7v7M1 12h7m16 0h7M1 20h7m16 0h7M12 13h8v6h-8z"
+                />
+              </svg>
+            </article>
+            <article class="capability">
+              <span class="capability-index">SKL-05</span>
+              <h3>Microsoft Word</h3>
+              <p>
+                Membuat dan merapikan dokumen agar tampil jelas, rapi, dan siap
+                dipakai.
+              </p>
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M7 3h13l5 5v21H7Z" />
+                <path d="M20 3v6h6M11 15h10m-10 5h10m-10 5h7" />
+              </svg>
+            </article>
+            <article class="capability">
+              <span class="capability-index">SKL-06</span>
+              <h3>Koordinasi Tim</h3>
+              <p>
+                Terbiasa mengatur kerja tim lewat pengalaman sebagai Koordinator
+                Litbang di organisasi mahasiswa.
+              </p>
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <circle cx="16" cy="9" r="4" />
+                <circle cx="6" cy="14" r="3" />
+                <circle cx="26" cy="14" r="3" />
+                <path
+                  d="M8 29v-3a8 8 0 0 1 16 0v3M1 28v-2a6 6 0 0 1 7-6m23 8v-2a6 6 0 0 0-7-6"
+                />
+              </svg>
+            </article>
+<?php endif; ?>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="pengalaman"
+        class="shell section-block"
+        aria-labelledby="pengalaman-title"
+      >
+        <div class="section-head">
+          <p class="mono-label">/03 Perjalanan</p>
+          <h2 id="pengalaman-title">Yang sudah saya jalani.</h2>
+        </div>
+        <div class="experience-grid">
+          <p class="mono-label">Dari kampus ke dunia kerja</p>
+          <div class="timeline">
+<?php foreach ($content['experience'] as $row): ?>
+            <article class="timeline-row"><div class="timeline-time"><?= portfolio_e($row['period']) ?></div><div class="timeline-title"><h3><?= portfolio_e($row['title']) ?></h3><p><?= portfolio_e($row['organization']) ?></p></div><p class="timeline-desc"><?= portfolio_e($row['description']) ?></p></article>
+<?php endforeach; ?>
+<?php if (false): ?>
+            <article class="timeline-row">
+              <div class="timeline-time">Organisasi</div>
+              <div class="timeline-title">
+                <h3>Koordinator Litbang</h3>
+                <p>Himpunan Mahasiswa Sistem Informasi</p>
+              </div>
+              <p class="timeline-desc">
+                Mengatur kegiatan bidang penelitian dan pengembangan, sambil
+                kerja bareng pengurus lain untuk menjalankan program organisasi.
+              </p>
+            </article>
+            <article class="timeline-row">
+              <div class="timeline-time">Lulus 2026</div>
+              <div class="timeline-title">
+                <h3>Sarjana (S1)</h3>
+                <p>Universitas Al Asyariah Mandar</p>
+              </div>
+              <p class="timeline-desc">
+                Lulus tahun 2026. Selama kuliah, saya aktif di Himpunan
+                Mahasiswa Sistem Informasi dan belajar menggabungkan sisi
+                teknologi, organisasi, serta pemecahan masalah.
+              </p>
+            </article>
+<?php endif; ?>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="sertifikat"
+        class="credentials"
+        aria-labelledby="sertifikat-title"
+      >
+        <div class="shell section-block">
+          <div class="section-head">
+            <p class="mono-label">/04 Target berikutnya</p>
+            <h2 id="sertifikat-title">Bidang yang sedang saya dalami.</h2>
+          </div>
+          <p class="credential-intro">
+            Ini masih contoh tampilan untuk tiga bidang yang ingin saya
+            kembangkan. Nanti akan diganti dengan sertifikat asli setelah saya
+            menyelesaikan program resminya.
+          </p>
+          <div class="credential-grid">
+<?php foreach ($content['targets'] as $row): ?>
+            <article class="credential"><div class="credential-top"><span class="credential-code"><?= portfolio_e($row['code']) ?></span><span class="credential-status">Target belajar</span></div><svg aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="7" y="7" width="18" height="18" /><path d="M11 1v6m10-6v6m-10 18v6m10-6v6M1 11h6m18 0h6M1 21h6m18 0h6" /></svg><p class="cert-pretitle">Fokus pengembangan</p><p class="cert-name"><?= portfolio_e(implode(' ', $name)) ?></p><h3><?= portfolio_e($row['title']) ?></h3><p><?= portfolio_e($row['description']) ?></p><p class="credential-note">TARGET PRIBADI // DALAM PROSES</p></article>
+<?php endforeach; ?>
+<?php if (false): ?>
+              <div class="credential-top">
+                <span class="credential-code">SEC-01</span
+                ><span class="credential-status">Contoh desain</span>
+              </div>
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M16 3 27 7v8c0 7-4.5 11.5-11 14-6.5-2.5-11-7-11-14V7Z"
+                />
+                <path d="m11 16 3 3 7-8" />
+              </svg>
+              <p class="cert-pretitle">Konsep untuk</p>
+              <p class="cert-name">Muhammad Nahrun Ukasya</p>
+              <h3>Bug Hunter</h3>
+              <p>
+                Target belajar keamanan siber dan cara menemukan celah keamanan
+                dengan benar.
+              </p>
+              <p class="credential-note">
+                CONTOH DESAIN // BELUM ADA SERTIFIKAT ASLI
+              </p>
+              <span class="credential-watermark" aria-hidden="true"
+                >CONTOH</span
+              >
+            </article>
+            <article class="credential">
+              <div class="credential-top">
+                <span class="credential-code">AI-02</span
+                ><span class="credential-status">Contoh desain</span>
+              </div>
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="7" y="7" width="18" height="18" />
+                <path
+                  d="M11 1v6m10-6v6m-10 18v6m10-6v6M1 11h6m18 0h6M1 21h6m18 0h6M12 20l4-9 4 9m-6.5-3h5"
+                />
+              </svg>
+              <p class="cert-pretitle">Konsep untuk</p>
+              <p class="cert-name">Muhammad Nahrun Ukasya</p>
+              <h3>AI</h3>
+              <p>
+                Target memperdalam cara memakai AI untuk kerja kreatif dan
+                digital.
+              </p>
+              <p class="credential-note">
+                CONTOH DESAIN // BELUM ADA SERTIFIKAT ASLI
+              </p>
+              <span class="credential-watermark" aria-hidden="true"
+                >CONTOH</span
+              >
+            </article>
+            <article class="credential">
+              <div class="credential-top">
+                <span class="credential-code">DEV-03</span
+                ><span class="credential-status">Contoh desain</span>
+              </div>
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 32 32"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="m11 8-8 8 8 8m10-16 8 8-8 8m-3-20-4 24" />
+              </svg>
+              <p class="cert-pretitle">Konsep untuk</p>
+              <p class="cert-name">Muhammad Nahrun Ukasya</p>
+              <h3>Coding</h3>
+              <p>
+                Target memperkuat dasar coding untuk membangun website dan
+                aplikasi.
+              </p>
+              <p class="credential-note">
+                CONTOH DESAIN // BELUM ADA SERTIFIKAT ASLI
+              </p>
+              <span class="credential-watermark" aria-hidden="true"
+                >CONTOH</span
+              >
+            </article>
+<?php endif; ?>
+          </div>
+        </div>
+      </section>
+
+      <section id="kontak" class="shell" aria-labelledby="kontak-title">
+        <div class="contact-panel">
+          <div>
+            <p class="mono-label">/05 Yuk, ngobrol</p>
+            <h2 id="kontak-title">Punya ide? Kita bikin jadi nyata.</h2>
+          </div>
+          <div class="contact-aside">
+            <p>
+              Saya terbuka untuk proyek fotografi, edit foto, pembuatan website,
+              aplikasi, dan kerja kreatif dengan bantuan AI.
+            </p>
+            <div class="location-line">
+              <span>Domisili Matakali</span><span>SIAP KOLABORASI</span>
+            </div>
+            <a
+              class="button primary"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=nahrunganz@gmail.com"
+              target="_blank"
+              rel="noopener"
+              >nahrunganz@gmail.com
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M5 12h14m-6-6 6 6-6 6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Muhammad Nahrun Ukasya · Matakali</span>
+      <div class="footer-socials" aria-label="Media sosial">
+        <a
+          href="https://www.instagram.com/nhrunn_"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Instagram @nhrunn_</a
+        >
+        <a
+          href="https://www.facebook.com/muhammadnahrununikearenk.nahrun/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Facebook</a
+        >
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
